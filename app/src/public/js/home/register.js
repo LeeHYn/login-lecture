@@ -1,18 +1,22 @@
 "use static";
 
 const id = document.querySelector("#id");
+name = document.querySelector("#name");
 psw = document.querySelector("#pwd");
-loginbtn = document.querySelector("#button");
+confirmPwd = document.querySelector("#confirm-pwd");
+registerbtn = document.querySelector("#button");
 
-loginbtn.addEventListener("click", login);
+registerbtn.addEventListener("click", register);
 
-function login() {
+function register() {
   const req = {
     id: id.value,
+    name: name.value,
     pwd: pwd.value,
+    confirmPwd: confirmPwd.value,
   };
 
-  fetch("/Login", {
+  fetch("/register", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -22,7 +26,7 @@ function login() {
     .then((res) => res.json())
     .then((res) => {
       if (res.success) {
-        location.href = "/";
+        location.href = "/Login";
       } else {
         alert(res.msg);
       }
