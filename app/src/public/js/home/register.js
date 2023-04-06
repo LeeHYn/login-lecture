@@ -1,16 +1,16 @@
 "use static";
 
 const id = document.querySelector("#id");
-name = document.querySelector("#name");
-psw = document.querySelector("#pwd");
-confirmPwd = document.querySelector("#confirm-pwd");
-registerbtn = document.querySelector("#button");
+const name = document.querySelector("#name");
+const psw = document.querySelector("#pwd");
+const confirmPwd = document.querySelector("#confirm-pwd");
+const registerbtn = document.querySelector("#button");
 
 registerbtn.addEventListener("click", register);
 
 function register() {
   if (!id.value) return alert("아이디를 입력해주십시오");
-  if (pwd !== confirmPwd) {
+  if (pwd.value !== confirmPwd.value) {
     return alert("비밀번호가 일치하지 않습니다.");
   }
   const req = {
@@ -35,6 +35,6 @@ function register() {
       }
     })
     .catch((err) => {
-      console.err(new Error("로그인 중 에러 발생"));
+      console.err(new Error("회원가입 중 에러 발생"));
     });
 }

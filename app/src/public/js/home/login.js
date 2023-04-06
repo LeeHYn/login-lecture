@@ -1,8 +1,8 @@
-"use static";
+"use strict";
 
 const id = document.querySelector("#id");
-psw = document.querySelector("#pwd");
-loginbtn = document.querySelector("#button");
+const psw = document.querySelector("#pwd");
+const loginbtn = document.querySelector("#button");
 
 loginbtn.addEventListener("click", login);
 
