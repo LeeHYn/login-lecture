@@ -5,9 +5,11 @@ class User {
   constructor(body) {
     this.body = body;
   }
-  login() {
+  async login() {
     const client = this.body;
-    const { id, pwd } = UserStorage.getUserInfo(client.id);
+    const { id, pwd } = await UserStorage.getUserInfo(client.id);
+
+    //promise를 반환하는 애한테는 awit을 붙여 promise가 데이터를 전부 전달 받을 때까지 기다리라고 명령할수있다.
     if (id) {
       if (id === client.id && pwd === client.pwd) {
         return { success: true };
