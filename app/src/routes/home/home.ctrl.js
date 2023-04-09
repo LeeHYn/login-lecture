@@ -12,6 +12,12 @@ const output = {
   register: (req, res) => {
     res.render("home/register");
   },
+  calender: (req, res) => {
+    res.render("home/todo");
+  },
+  todo: (req, res) => {
+    res.render("home/todo");
+  },
 };
 
 const process = {

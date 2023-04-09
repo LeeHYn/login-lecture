@@ -1,4 +1,4 @@
-"use strict";
+"use strict"
 
 const id = document.querySelector("#id");
 const psw = document.querySelector("#pwd");

@@ -1,4 +1,4 @@
-"use static";
+"use strict"
 
 const id = document.querySelector("#id");
 const name = document.querySelector("#name");
